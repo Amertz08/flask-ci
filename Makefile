@@ -16,7 +16,13 @@ run:
 	$(IMG)
 
 test:
-	curl http://localhost:5000
+	$(DK) run \
+	-it \
+	--rm \
+	-p $(PORTS) \
+	--name $(NAME) \
+	$(IMG) \
+	python test_endpoints.py
 
 stop:
 	$(DK) stop $(NAME)
