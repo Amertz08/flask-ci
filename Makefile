@@ -29,5 +29,4 @@ stop:
 
 latest:
 	$(DK) tag $(IMG) $(TAG)
-	$(DK) tag $(TAG) $(IMG):latest
 
