@@ -13,7 +13,7 @@ run:
 	--rm \
 	-p $(PORTS) \
 	--name $(NAME) \
-	$(IMG)
+	$(TAG)
 
 stop:
 	$(DK) stop $(NAME)
