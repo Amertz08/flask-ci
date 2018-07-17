@@ -5,7 +5,7 @@ NAME=flask_app
 TAG=$(IMG):$(shell git rev-parse --short HEAD)
 
 build:
-	$(DK) build -t=$(TAG) .
+	$(DK) build -t=$(IMG) .
 
 run:
 	$(DK) run \
@@ -13,7 +13,7 @@ run:
 	--rm \
 	-p $(PORTS) \
 	--name $(NAME) \
-	$(TAG)
+	$(IMG)
 
 test:
 	curl http://localhost:5000
