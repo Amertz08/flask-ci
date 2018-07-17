@@ -7,7 +7,6 @@ before_install:
   - make # Runs build
 
 script:
-  - make run
   - make test
 
 after_install:
