@@ -15,6 +15,9 @@ run:
 	--name $(NAME) \
 	$(TAG)
 
+test:
+	curl http://localhost:5000
+
 stop:
 	$(DK) stop $(NAME)
 

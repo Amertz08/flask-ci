@@ -8,6 +8,7 @@ before_install:
 
 script:
   - make run
+  - make test
 
 after_install:
   - make stop
