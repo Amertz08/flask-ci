@@ -22,4 +22,6 @@ stop:
 	$(DK) stop $(NAME)
 
 latest:
+	$(DK) tag $(IMG) $(TAG)
 	$(DK) tag $(TAG) $(IMG):latest
+
