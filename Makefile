@@ -6,7 +6,6 @@ TAG=$(IMG):$(shell git rev-parse --short HEAD)
 
 build:
 	$(DK) build -t=$(TAG) .
-	$(DK) tag $(TAG) $(IMG):latest
 
 run:
 	$(DK) run \
@@ -18,3 +17,6 @@ run:
 
 stop:
 	$(DK) stop $(NAME)
+
+latest:
+	$(DK) tag $(TAG) $(IMG):latest
