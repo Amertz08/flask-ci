@@ -1,10 +1,13 @@
 sudo: required
 
 services:
+  - pip
   - docker
 
 before_install:
   - make # Runs build
+  - pip install flake8
+  - make flake
 
 script:
   - make test

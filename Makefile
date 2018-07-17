@@ -30,3 +30,6 @@ stop:
 latest:
 	$(DK) tag $(IMG) $(TAG)
 
+flake:
+	flake8
+
