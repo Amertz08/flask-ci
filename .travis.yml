@@ -16,5 +16,5 @@ before_script:
 script:
   - make test
 
-after_install:
+after_script:
   - make latest
