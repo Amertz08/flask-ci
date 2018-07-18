@@ -25,3 +25,8 @@ jobs:
         - docker pull $DOCKER_USERNAME/flask-ci
       script:
         - make test
+
+notifications:
+  email:
+    on_success: never
+    on_failure: always
