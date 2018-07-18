@@ -21,6 +21,7 @@ jobs:
         - make latest
         - docker push $DOCKER_USERNAME/flask-ci
     - stage: test
-      script:
+      before_script:
         - docker pull $DOCKER_USERNAME/flask-ci
+      script:
         - make test
