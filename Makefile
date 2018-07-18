@@ -1,5 +1,5 @@
 DK=docker
-IMG=app
+IMG=flask-ci
 PORTS="5000:5000"
 NAME=flask_app
 HASH=$(shell git rev-parse --short HEAD)

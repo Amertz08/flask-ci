@@ -8,16 +8,19 @@ services:
 
 jobs:
   include:
-    - stage: build
+    - stage: Build Docker Image
       install:
         - pip install flake8
       before_script:
         - make flake
         - make version
       script:
+        - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
         - make build
-    - stage: test
-      script:
-        - make test
+        - docker push $DOCKER_USERNAME/flask-ci
       after_script:
         - make latest
+    - stage: test
+      script:
+        - docker pull $DOCKER_USERNAME/flask-ci
+        - make test
