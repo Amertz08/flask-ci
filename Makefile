@@ -2,7 +2,8 @@ DK=docker
 IMG=app
 PORTS="5000:5000"
 NAME=flask_app
-TAG=$(IMG):$(shell git rev-parse --short HEAD)
+HASH=$(shell git rev-parse --short HEAD)
+TAG=$(IMG):$(HASH)
 
 build:
 	$(DK) build -t=$(IMG) .
@@ -33,3 +34,5 @@ latest:
 flake:
 	flake8
 
+version:
+	echo $(HASH) > version.txt

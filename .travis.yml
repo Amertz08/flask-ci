@@ -11,6 +11,7 @@ install:
 
 before_script:
   - make flake
+  - make version
   - make build
 
 script:

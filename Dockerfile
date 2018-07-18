@@ -11,5 +11,6 @@ WORKDIR /code
 ADD app.py .
 ADD routes.py .
 ADD test_endpoints.py .
+ADD version.txt .
 
 CMD ["python", "app.py"]
