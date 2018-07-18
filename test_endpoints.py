@@ -13,8 +13,11 @@ class TestApp(TestCase):
 
     def test_index(self):
         resp = self.client.get(url_for('main.index'))
-        with open('version.txt', 'r') as f:
-            _hash = f.read()
+        try:
+            with open('version.txt', 'r') as f:
+                _hash = f.read()
+        except FileNotFoundError:
+            _hash = 'version.txt not found'
         self.assert200(resp)
         self.assertEqual(resp.data, f'Hello {_hash}'.encode())
 
