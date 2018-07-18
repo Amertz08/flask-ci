@@ -17,6 +17,7 @@ jobs:
       script:
         - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
         - make build
+        - docker images
         - docker push $DOCKER_USERNAME/flask-ci
       after_script:
         - make latest
