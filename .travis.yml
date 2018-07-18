@@ -1,17 +1,20 @@
-sudo: required
+sudo: enabled
+language: python
+python:
+  - "3.6"
 
 services:
-  - pip
   - docker
 
-before_install:
-  - make # Runs build
+install:
   - pip install flake8
+
+before_script:
   - make flake
+  - make build
 
 script:
   - make test
 
 after_install:
-  - make stop
   - make latest
